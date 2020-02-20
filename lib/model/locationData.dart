@@ -6,7 +6,7 @@ class LocationData {
   final Location location;
   final double temperature;
   final bool isCelcius;
-  final Image weatherIcon;
+  final String weatherIcon;
 
   const LocationData({
     this.location,
