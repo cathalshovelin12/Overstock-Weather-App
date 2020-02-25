@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/utils/unitConversion.dart';
 
 class CurrentLocationInfo extends StatelessWidget {
   final String location;
@@ -43,7 +44,7 @@ class CurrentLocationInfo extends StatelessWidget {
                           Icon(Icons.ac_unit, size: 20.0),
                           SizedBox(width: 5.0),
                           Text(
-                            temperature?.floor().toString(),
+                            convertKelvinToCelcius(temperature)?.toString(),
                             style: Theme.of(context).textTheme.caption,
                           ),
                         ],
