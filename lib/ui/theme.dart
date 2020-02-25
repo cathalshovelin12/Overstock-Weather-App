@@ -6,15 +6,15 @@ ThemeData buildTheme() {
       headline: base.headline.copyWith(
         fontFamily: 'Merriweather',
         fontSize: 40.0,
-        color: const Color(0xFF807A6B),
+        color: const Color(0xFFFFFFFF),
       ),
       title: base.title.copyWith(
         fontFamily: 'Merriweather',
         fontSize: 15.0,
-        color: const Color(0xFF807A6B),
+        color: const Color(0xFFFFFFFF),
       ),
       caption: base.caption.copyWith(
-        color: const Color(0xFFCCC5AF),
+        color: const Color(0xFFFFFFFF),
       ),
     );
   }
@@ -23,12 +23,12 @@ ThemeData buildTheme() {
 
   return base.copyWith(
     textTheme: _buildTextTheme(base.textTheme),
-    primaryColor: const Color(0xFFFFF8E1),
-    indicatorColor: const Color(0xFF807A6B),
-    scaffoldBackgroundColor: const Color(0xFFF5F5F5),
-    accentColor: const Color(0xFFFFF8E1),
+    primaryColor: const Color(0xFF2770E6),
+    indicatorColor: const Color(0xFFFFFFFF),
+    scaffoldBackgroundColor: const Color(0xFF626770),
+    accentColor: const Color(0xFFFFFFFF),
     iconTheme: IconThemeData(
-      color: const Color(0xFFCCC5AF),
+      color: const Color(0xFFFFFFFF),
       size: 20.0,
     ),
     buttonColor: Colors.white,

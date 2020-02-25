@@ -65,9 +65,9 @@ class HomeScreenState extends State<HomeScreen> {
             bottom: TabBar(
               labelColor: Theme.of(context).indicatorColor,
               tabs: [
-                Tab(icon: Icon(Icons.location_city, size: _iconSize)),
-                Tab(icon: Icon(Icons.calendar_today, size: _iconSize)),
-                Tab(icon: Icon(Icons.access_time, size: _iconSize)),
+                Tab(icon: Icon(Icons.adjust, size: _iconSize)),
+                Tab(icon: Icon(Icons.adjust, size: _iconSize)),
+                Tab(icon: Icon(Icons.adjust, size: _iconSize)),
                 Tab(icon: Icon(Icons.settings, size: _iconSize)),
               ],
             ),
@@ -78,8 +78,8 @@ class HomeScreenState extends State<HomeScreen> {
           child: TabBarView(
             children: [
               _buildCurrentLocationInfo(),
-              Center(child: Icon(Icons.ac_unit)),
-              Center(child: Icon(Icons.account_box)),
+              Center(child: Icon(Icons.adjust)),
+              Center(child: Icon(Icons.adjust)),
               Center(child: Icon(Icons.settings)),
             ],
           ),
