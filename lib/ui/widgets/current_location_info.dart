@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/model/locationData.dart';
 
 class CurrentLocationInfo extends StatelessWidget {
-  final Location location;
+  final String location;
   final double temperature;
   final bool isCelcius;
   final String weatherIcon;
@@ -32,7 +31,7 @@ class CurrentLocationInfo extends StatelessWidget {
               ]),
               Column(children: [
                 Text(
-                  location.toString().replaceAll("Location.", "".toUpperCase()),
+                  location,
                   style: Theme.of(context).textTheme.title,
                 ),
                 SizedBox(height: 10.0),
@@ -44,7 +43,7 @@ class CurrentLocationInfo extends StatelessWidget {
                           Icon(Icons.ac_unit, size: 20.0),
                           SizedBox(width: 5.0),
                           Text(
-                            temperature.floor().toString(),
+                            temperature?.floor().toString(),
                             style: Theme.of(context).textTheme.caption,
                           ),
                         ],
