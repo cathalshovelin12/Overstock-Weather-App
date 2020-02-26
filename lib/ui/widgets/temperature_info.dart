@@ -28,7 +28,7 @@ class TemperatureInfo extends StatelessWidget {
                 SizedBox(width: 5.0),
                 Text(
                   convertKelvinToCelcius(temperature)?.toString(),
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme.of(context).textTheme.headline,
                 ),
               ],
             ),
@@ -40,7 +40,7 @@ class TemperatureInfo extends StatelessWidget {
               children: [
                 Text(
                   isCelcius ? " ºC" : " ºF",
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme.of(context).textTheme.headline,
                 ),
               ],
             ),

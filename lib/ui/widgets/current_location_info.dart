@@ -30,14 +30,14 @@ class CurrentLocationInfo extends StatelessWidget {
             bottomRight: const Radius.circular(20.0),
           ),
         ),
-        constraints: BoxConstraints(maxHeight: 180.0, minHeight: 40.0),
+        constraints: BoxConstraints(maxHeight: 140.0, minHeight: 40.0),
         child: Column(
           children: <Widget>[
             Expanded(
               child: Column(children: [
                 Text(
                   convertTimestampToDate(timestamp),
-                  style: Theme.of(context).textTheme.headline,
+                  style: Theme.of(context).textTheme.title,
                 ),
               ]),
             ),
@@ -57,25 +57,33 @@ class CurrentLocationInfo extends StatelessWidget {
                   ]),
                 ),
                 Container(
-                  width: 120,
+                  width: 160,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      TemperatureInfo(
-                          location: location,
-                          temperature: temperature,
-                          isCelcius: isCelcius,
-                          weatherIcon: weatherIcon,
-                          timestamp: timestamp),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          TemperatureInfo(
+                              location: location,
+                              temperature: temperature,
+                              isCelcius: isCelcius,
+                              weatherIcon: weatherIcon,
+                              timestamp: timestamp),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            location,
+                            style: Theme.of(context).textTheme.title,
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
-                Container(
-                  width: 120,
-                  child: Text(
-                    location,
-                    style: Theme.of(context).textTheme.title,
-                  ),
-                )
               ],
             ),
           ],
