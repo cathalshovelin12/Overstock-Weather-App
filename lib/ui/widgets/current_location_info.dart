@@ -6,13 +6,14 @@ class CurrentLocationInfo extends StatelessWidget {
   final double temperature;
   final bool isCelcius;
   final String weatherIcon;
+  final int timestamp;
 
-  CurrentLocationInfo({
-    @required this.location,
-    @required this.temperature,
-    @required this.isCelcius,
-    @required this.weatherIcon,
-  });
+  CurrentLocationInfo(
+      {@required this.location,
+      @required this.temperature,
+      @required this.isCelcius,
+      @required this.weatherIcon,
+      @required this.timestamp});
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +29,18 @@ class CurrentLocationInfo extends StatelessWidget {
             bottomRight: const Radius.circular(20.0),
           ),
         ),
-        constraints: BoxConstraints(maxHeight: 60.0, minHeight: 30.0),
+        constraints: BoxConstraints(maxHeight: 180.0, minHeight: 40.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            Expanded(
+              child:
+                Column(children: [
+                  Text(
+                    convertTimestampToDate(timestamp),
+                    style: Theme.of(context).textTheme.headline,
+                  ),
+                ]),
+            ),
             Row(
               children: <Widget>[
                 Container(
@@ -41,17 +50,15 @@ class CurrentLocationInfo extends StatelessWidget {
                   Image.network(
                     weatherIcon,
                     fit: BoxFit.cover,
-                    width: 50.0,
+                    width: 120.0,
                   ),
                 ]),
                 Column(children: [
-                  Text(
-                    location,
-                    style: Theme.of(context).textTheme.title,
-                  ),
                   SizedBox(height: 10.0),
-                  Row(children: [
+                  Row(
+                    children: [
                     Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Row(
                           children: [
@@ -77,6 +84,10 @@ class CurrentLocationInfo extends StatelessWidget {
                       ],
                     ),
                   ]),
+                  Text(
+                    location,
+                    style: Theme.of(context).textTheme.title,
+                  ),
                 ]),
               ],
             ),

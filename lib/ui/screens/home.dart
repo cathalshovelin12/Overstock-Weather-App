@@ -17,10 +17,8 @@ class HomeScreenState extends State<HomeScreen> {
         builder: (context, snap) {
           if (snap.connectionState == ConnectionState.none &&
               snap.data == null) {
-            print("SNAP DATA : ${snap.data}");
             return Container();
           }
-          print("PASSED WAITING STATE");
           return ListView.builder(
             itemCount: snap.data.length,
             itemBuilder: (BuildContext context, int index) {
@@ -30,6 +28,7 @@ class HomeScreenState extends State<HomeScreen> {
                 temperature: locationData?.temperature,
                 isCelcius: locationData?.isCelcius,
                 weatherIcon: locationData?.weatherIcon,
+                timestamp: locationData.timestamp,
               );
             },
           );
@@ -53,24 +52,13 @@ class HomeScreenState extends State<HomeScreen> {
       );
     }
 
-    double _iconSize = 20.0;
-
     return DefaultTabController(
-      length: 4,
+      length: 1,
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(50.0),
           child: AppBar(
             elevation: 2.0,
-            bottom: TabBar(
-              labelColor: Theme.of(context).indicatorColor,
-              tabs: [
-                Tab(icon: Icon(Icons.adjust, size: _iconSize)),
-                Tab(icon: Icon(Icons.adjust, size: _iconSize)),
-                Tab(icon: Icon(Icons.adjust, size: _iconSize)),
-                Tab(icon: Icon(Icons.settings, size: _iconSize)),
-              ],
-            ),
           ),
         ),
         body: Padding(
@@ -78,9 +66,6 @@ class HomeScreenState extends State<HomeScreen> {
           child: TabBarView(
             children: [
               _buildCurrentLocationInfo(),
-              Center(child: Icon(Icons.adjust)),
-              Center(child: Icon(Icons.adjust)),
-              Center(child: Icon(Icons.settings)),
             ],
           ),
         ),
