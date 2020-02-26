@@ -3,6 +3,8 @@ import 'package:weather_app/ui/widgets/temperature.dart';
 import 'package:weather_app/ui/widgets/temperature_info.dart';
 import 'package:weather_app/utils/unitConversion.dart';
 
+import 'info_table.dart';
+
 class CurrentLocationInfo extends StatelessWidget {
   final String location;
   final double temperature;
@@ -22,22 +24,13 @@ class CurrentLocationInfo extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(5.0),
       child: new Container(
-        decoration: new BoxDecoration(
-          borderRadius: new BorderRadius.only(
-            topLeft: const Radius.circular(20.0),
-            topRight: const Radius.circular(20.0),
-            bottomLeft: const Radius.circular(20.0),
-            bottomRight: const Radius.circular(20.0),
-          ),
-        ),
-        constraints: BoxConstraints(maxHeight: 140.0, minHeight: 40.0),
+        constraints: BoxConstraints(maxHeight: 540.0, minHeight: 180.0),
         child: Column(
           children: <Widget>[
             Expanded(
-              child: Temperature(
-                timestamp: timestamp,
-              )
-            ),
+                child: Temperature(
+              timestamp: timestamp,
+            )),
             Row(
               children: <Widget>[
                 Container(
@@ -83,6 +76,28 @@ class CurrentLocationInfo extends StatelessWidget {
                 ),
               ],
             ),
+            Container(
+              constraints: BoxConstraints(maxHeight: 50.0, minHeight: 40.0),
+            ),
+            InfoTable(
+                mainTitle: "Wind : ",
+                firstTitle: "Speed",
+                firstTitleContent: "firstContent",
+                secondTitle: "Gust",
+                secondTitleContent: "secondContent",
+                thirdTitle: "Direction",
+                thirdTitleContent: "thirdContent"),
+            Container(
+              constraints: BoxConstraints(maxHeight: 5.0, minHeight: 5.0),
+            ),
+            InfoTable(
+                mainTitle: "Percipitation : ",
+                firstTitle: "Fall",
+                firstTitleContent: "firstContent",
+                secondTitle: " ",
+                secondTitleContent: " ",
+                thirdTitle: "Chance",
+                thirdTitleContent: "thirdContent"),
           ],
         ),
       ),

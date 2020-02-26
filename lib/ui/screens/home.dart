@@ -1,4 +1,3 @@
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:weather_app/model/locationData.dart';
@@ -46,7 +45,7 @@ class HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             Expanded(
               child: _populateCards(),
-            )
+            ),
           ],
         ),
       );
