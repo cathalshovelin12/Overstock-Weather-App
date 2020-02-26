@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/utils/unitConversion.dart';
 
-class Temperature extends StatelessWidget {
+class CurrentDay extends StatelessWidget {
   final int timestamp;
 
-  Temperature({@required this.timestamp});
+  CurrentDay({@required this.timestamp});
 
   @override
   Widget build(BuildContext context) {

@@ -5,16 +5,17 @@ ThemeData buildTheme() {
     return base.copyWith(
       headline: base.headline.copyWith(
         fontFamily: 'Merriweather',
-        fontSize: 40.0,
+        fontSize: 50.0,
         color: const Color(0xFFFFFFFF),
       ),
       title: base.title.copyWith(
         fontFamily: 'Merriweather',
-        fontSize: 15.0,
+        fontSize: 30.0,
         color: const Color(0xFFFFFFFF),
       ),
       caption: base.caption.copyWith(
         color: const Color(0xFFFFFFFF),
+        fontSize: 20.0
       ),
     );
   }
@@ -23,9 +24,9 @@ ThemeData buildTheme() {
 
   return base.copyWith(
     textTheme: _buildTextTheme(base.textTheme),
-    primaryColor: const Color(0xFF2770E6),
+    primaryColor: const Color(0xFF1976D2),
     indicatorColor: const Color(0xFFFFFFFF),
-    scaffoldBackgroundColor: const Color(0xFF626770),
+    scaffoldBackgroundColor: const Color(0xFF2196F3),
     accentColor: const Color(0xFFFFFFFF),
     iconTheme: IconThemeData(
       color: const Color(0xFFFFFFFF),

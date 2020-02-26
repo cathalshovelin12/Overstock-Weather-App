@@ -36,9 +36,9 @@ class InfoTable extends StatelessWidget {
                   decoration: BoxDecoration(
                       border: Border(
                           bottom:
-                              BorderSide(color: Color.fromARGB(50, 0, 0, 0), width: 2.0),
+                              BorderSide(color: Color(0xFF757575), width: 2.0),
                           top: BorderSide(
-                              color: Color.fromARGB(50, 0, 0, 0), width: 2.0))),
+                              color: Color(0xFF757575), width: 2.0))),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[

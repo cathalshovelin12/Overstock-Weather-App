@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/ui/widgets/temperature.dart';
+import 'package:weather_app/ui/widgets/current_day.dart';
 import 'package:weather_app/ui/widgets/temperature_info.dart';
 
 import 'info_table.dart';
@@ -30,11 +30,11 @@ class CurrentLocationInfo extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(5.0),
       child: new Container(
-        constraints: BoxConstraints(maxHeight: 710.0, minHeight: 600.0),
+        constraints: BoxConstraints(maxHeight: 750.0, minHeight: 600.0),
         child: Column(
           children: <Widget>[
             Expanded(
-                child: Temperature(
+                child: CurrentDay(
               timestamp: timestamp,
             )),
             Row(
@@ -53,7 +53,7 @@ class CurrentLocationInfo extends StatelessWidget {
                   ]),
                 ),
                 Container(
-                  width: 160,
+                  width: 190,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
