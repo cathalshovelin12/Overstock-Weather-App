@@ -24,7 +24,7 @@ class CurrentLocationInfo extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(5.0),
       child: new Container(
-        constraints: BoxConstraints(maxHeight: 540.0, minHeight: 180.0),
+        constraints: BoxConstraints(maxHeight: 710.0, minHeight: 600.0),
         child: Column(
           children: <Widget>[
             Expanded(
@@ -82,22 +82,33 @@ class CurrentLocationInfo extends StatelessWidget {
             InfoTable(
                 mainTitle: "Wind : ",
                 firstTitle: "Speed",
-                firstTitleContent: "firstContent",
+                firstTitleContent: "12kts",
                 secondTitle: "Gust",
-                secondTitleContent: "secondContent",
+                secondTitleContent: "17kts",
                 thirdTitle: "Direction",
-                thirdTitleContent: "thirdContent"),
+                thirdTitleContent: "NNE"),
             Container(
               constraints: BoxConstraints(maxHeight: 5.0, minHeight: 5.0),
             ),
             InfoTable(
                 mainTitle: "Percipitation : ",
                 firstTitle: "Fall",
-                firstTitleContent: "firstContent",
+                firstTitleContent: "18mm",
                 secondTitle: " ",
                 secondTitleContent: " ",
                 thirdTitle: "Chance",
-                thirdTitleContent: "thirdContent"),
+                thirdTitleContent: "56%"),
+                Container(
+              constraints: BoxConstraints(maxHeight: 5.0, minHeight: 5.0),
+            ),
+            InfoTable(
+                mainTitle: "All Day : ",
+                firstTitle: "Moon",
+                firstTitleContent: "Full",
+                secondTitle: " ",
+                secondTitleContent: " ",
+                thirdTitle: "Tide",
+                thirdTitleContent: "09:00 | HIGH \n 15:00 | LOW \n 21:00 | HIGH"),
           ],
         ),
       ),
