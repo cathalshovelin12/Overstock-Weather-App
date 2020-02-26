@@ -2,15 +2,15 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:weather_app/model/locationData.dart';
+import 'package:weather_app/utils/apiKeys.dart';
 
 Future getLocationData() async {
-  String apiKey = "afcb26b4d06b3e8ff6f44b92ca64fd3f";
+  String apiKey = openWeatherApiKey();
   var url =
       "http://api.openweathermap.org/data/2.5/weather?q=London&appid=" + apiKey;
   final response = await http.get(Uri.encodeFull(url));
 
   if (response.statusCode == 200 && response != null) {
-    print("RESPONSE OF HTTP REQUEST : ${response.body}");
     return [LocationData.fromJson(json.decode(response.body))];
   } else {
     throw Exception("Failed to load weather for location");

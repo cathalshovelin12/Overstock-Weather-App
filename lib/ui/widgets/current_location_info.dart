@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/ui/widgets/temperature_info.dart';
 import 'package:weather_app/utils/unitConversion.dart';
 
 class CurrentLocationInfo extends StatelessWidget {
@@ -33,62 +34,48 @@ class CurrentLocationInfo extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Expanded(
-              child:
-                Column(children: [
-                  Text(
-                    convertTimestampToDate(timestamp),
-                    style: Theme.of(context).textTheme.headline,
-                  ),
-                ]),
+              child: Column(children: [
+                Text(
+                  convertTimestampToDate(timestamp),
+                  style: Theme.of(context).textTheme.headline,
+                ),
+              ]),
             ),
             Row(
               children: <Widget>[
                 Container(
                   color: Color(0xFFFFFFFF),
                 ),
-                Column(children: [
-                  Image.network(
-                    weatherIcon,
-                    fit: BoxFit.cover,
-                    width: 120.0,
-                  ),
-                ]),
-                Column(children: [
-                  SizedBox(height: 10.0),
-                  Row(
-                    children: [
-                    Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Row(
-                          children: [
-                            SizedBox(width: 5.0),
-                            Text(
-                              convertKelvinToCelcius(temperature)?.toString(),
-                              style: Theme.of(context).textTheme.caption,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              isCelcius ? " ºC" : " ºF",
-                              style: Theme.of(context).textTheme.caption,
-                            ),
-                          ],
-                        ),
-                      ],
+                Container(
+                  width: 120,
+                  child: Column(children: [
+                    Image.network(
+                      weatherIcon,
+                      fit: BoxFit.cover,
+                      width: 120.0,
                     ),
                   ]),
-                  Text(
+                ),
+                Container(
+                  width: 120,
+                  child: Column(
+                    children: <Widget>[
+                      TemperatureInfo(
+                          location: location,
+                          temperature: temperature,
+                          isCelcius: isCelcius,
+                          weatherIcon: weatherIcon,
+                          timestamp: timestamp),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: 120,
+                  child: Text(
                     location,
                     style: Theme.of(context).textTheme.title,
                   ),
-                ]),
+                )
               ],
             ),
           ],
