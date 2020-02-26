@@ -2,18 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/utils/unitConversion.dart';
 
 class TemperatureInfo extends StatelessWidget {
-  final String location;
   final double temperature;
   final bool isCelcius;
-  final String weatherIcon;
-  final int timestamp;
 
-  TemperatureInfo(
-      {@required this.location,
+  TemperatureInfo({
       @required this.temperature,
-      @required this.isCelcius,
-      @required this.weatherIcon,
-      @required this.timestamp});
+      @required this.isCelcius,});
 
   @override
   Widget build(BuildContext context) {

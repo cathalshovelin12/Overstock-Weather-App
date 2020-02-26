@@ -23,25 +23,10 @@ List<LocationData> getInitialLocationData() {
         location: "New York",
         temperature: 208.00,
         isCelcius: false,
-        weatherIcon: "lib/assets/sun.png",
-        timestamp: 1582640925),
-    LocationData(
-        location: "New York",
-        temperature: 18.00,
-        isCelcius: true,
-        weatherIcon: "lib/assets/moon.png",
-        timestamp: 1582640925),
-    LocationData(
-        location: "New York",
-        temperature: 23.00,
-        isCelcius: true,
-        weatherIcon: "lib/assets/rain.png",
-        timestamp: 1582640925),
-    LocationData(
-        location: "New York",
-        temperature: 68.00,
-        isCelcius: false,
-        weatherIcon: "lib/assets/cloud.png",
-        timestamp: 1582640925),
+        weatherIcon: "",
+        timestamp: 1582640925,
+        weatherType: "Sun",
+        windSpeed: 4.2,
+        windDirection: 80),
   ];
 }

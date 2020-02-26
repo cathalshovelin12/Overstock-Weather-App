@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/ui/widgets/temperature.dart';
 import 'package:weather_app/ui/widgets/temperature_info.dart';
-import 'package:weather_app/utils/unitConversion.dart';
 
 import 'info_table.dart';
 
@@ -11,13 +10,20 @@ class CurrentLocationInfo extends StatelessWidget {
   final bool isCelcius;
   final String weatherIcon;
   final int timestamp;
+  final String weatherType;
+  final double windSpeed;
+  final int windDirection;
 
-  CurrentLocationInfo(
-      {@required this.location,
-      @required this.temperature,
-      @required this.isCelcius,
-      @required this.weatherIcon,
-      @required this.timestamp});
+  CurrentLocationInfo({
+    @required this.location,
+    @required this.temperature,
+    @required this.isCelcius,
+    @required this.weatherIcon,
+    @required this.timestamp,
+    @required this.weatherType,
+    @required this.windSpeed,
+    @required this.windDirection,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -55,11 +61,8 @@ class CurrentLocationInfo extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           TemperatureInfo(
-                              location: location,
                               temperature: temperature,
-                              isCelcius: isCelcius,
-                              weatherIcon: weatherIcon,
-                              timestamp: timestamp),
+                              isCelcius: isCelcius,),
                         ],
                       ),
                       Row(
@@ -82,11 +85,11 @@ class CurrentLocationInfo extends StatelessWidget {
             InfoTable(
                 mainTitle: "Wind : ",
                 firstTitle: "Speed",
-                firstTitleContent: "12kts",
+                firstTitleContent: windSpeed.toString(),
                 secondTitle: "Gust",
                 secondTitleContent: "17kts",
                 thirdTitle: "Direction",
-                thirdTitleContent: "NNE"),
+                thirdTitleContent: "${windDirection.toString()} º"),
             Container(
               constraints: BoxConstraints(maxHeight: 5.0, minHeight: 5.0),
             ),
@@ -98,7 +101,7 @@ class CurrentLocationInfo extends StatelessWidget {
                 secondTitleContent: " ",
                 thirdTitle: "Chance",
                 thirdTitleContent: "56%"),
-                Container(
+            Container(
               constraints: BoxConstraints(maxHeight: 5.0, minHeight: 5.0),
             ),
             InfoTable(
@@ -108,7 +111,8 @@ class CurrentLocationInfo extends StatelessWidget {
                 secondTitle: " ",
                 secondTitleContent: " ",
                 thirdTitle: "Tide",
-                thirdTitleContent: "09:00 | HIGH \n 15:00 | LOW \n 21:00 | HIGH"),
+                thirdTitleContent:
+                    "09:00 | HIGH \n 15:00 | LOW \n 21:00 | HIGH"),
           ],
         ),
       ),

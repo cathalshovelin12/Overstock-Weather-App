@@ -27,7 +27,10 @@ class HomeScreenState extends State<HomeScreen> {
                 temperature: locationData?.temperature,
                 isCelcius: locationData?.isCelcius,
                 weatherIcon: locationData?.weatherIcon,
-                timestamp: locationData.timestamp,
+                timestamp: locationData?.timestamp,
+                weatherType: locationData?.weatherType,
+                windSpeed: locationData?.windSpeed,
+                windDirection: locationData?.windDirection,
               );
             },
           );
