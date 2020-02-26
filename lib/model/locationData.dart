@@ -18,7 +18,7 @@ class LocationData {
       location: json["name"],
       temperature: json["main"]["temp"],
       isCelcius: true,
-      weatherIcon: "https://cdn4.iconfinder.com/data/icons/weather-line-set/24/icn-weather-scattered-showers-512.png",
+      weatherIcon: "lib/assets/sun.png",
       timestamp: json["dt"]
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/ui/widgets/temperature.dart';
 import 'package:weather_app/ui/widgets/temperature_info.dart';
 import 'package:weather_app/utils/unitConversion.dart';
 
@@ -22,7 +23,6 @@ class CurrentLocationInfo extends StatelessWidget {
       padding: EdgeInsets.all(5.0),
       child: new Container(
         decoration: new BoxDecoration(
-          color: Colors.green,
           borderRadius: new BorderRadius.only(
             topLeft: const Radius.circular(20.0),
             topRight: const Radius.circular(20.0),
@@ -34,12 +34,9 @@ class CurrentLocationInfo extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Expanded(
-              child: Column(children: [
-                Text(
-                  convertTimestampToDate(timestamp),
-                  style: Theme.of(context).textTheme.title,
-                ),
-              ]),
+              child: Temperature(
+                timestamp: timestamp,
+              )
             ),
             Row(
               children: <Widget>[
@@ -49,7 +46,7 @@ class CurrentLocationInfo extends StatelessWidget {
                 Container(
                   width: 120,
                   child: Column(children: [
-                    Image.network(
+                    Image.asset(
                       weatherIcon,
                       fit: BoxFit.cover,
                       width: 120.0,

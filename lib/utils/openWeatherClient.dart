@@ -23,29 +23,25 @@ List<LocationData> getInitialLocationData() {
         location: "New York",
         temperature: 208.00,
         isCelcius: false,
-        weatherIcon:
-            "https://lh3.googleusercontent.com/proxy/ljfQpXZQGoSZeYW7mq6HqbZGrFzeJCrZ5A_m8TkTRxas-eZpR9YYAOvR8gadVD6NWTNKnCAsdatlfeRCyKzKpNhlMC4wzhlUn71M_6OHXdzOm0JRx3jxYIKgyvf-5BbtaBrHBvrEoGZ4",
+        weatherIcon: "lib/assets/sun.png",
         timestamp: 1582640925),
     LocationData(
         location: "New York",
         temperature: 18.00,
         isCelcius: true,
-        weatherIcon:
-            "https://www.pngfind.com/pngs/m/132-1323443_simple-weather-icons-cloudy-night-night-weather-icon.png",
+        weatherIcon: "lib/assets/moon.png",
         timestamp: 1582640925),
     LocationData(
         location: "New York",
         temperature: 23.00,
         isCelcius: true,
-        weatherIcon:
-            "https://lh3.googleusercontent.com/proxy/ljfQpXZQGoSZeYW7mq6HqbZGrFzeJCrZ5A_m8TkTRxas-eZpR9YYAOvR8gadVD6NWTNKnCAsdatlfeRCyKzKpNhlMC4wzhlUn71M_6OHXdzOm0JRx3jxYIKgyvf-5BbtaBrHBvrEoGZ4",
+        weatherIcon: "lib/assets/rain.png",
         timestamp: 1582640925),
     LocationData(
         location: "New York",
         temperature: 68.00,
         isCelcius: false,
-        weatherIcon:
-            "https://www.pngfind.com/pngs/m/132-1323443_simple-weather-icons-cloudy-night-night-weather-icon.png",
+        weatherIcon: "lib/assets/cloud.png",
         timestamp: 1582640925),
   ];
 }
