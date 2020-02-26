@@ -5,7 +5,6 @@ import 'package:weather_app/model/locationData.dart';
 import 'package:weather_app/utils/apiKeys.dart';
 
 Future getLocationData() async {
-  print("REQUEST MADE");
   String apiKey = openWeatherApiKey();
   var url =
       "http://api.openweathermap.org/data/2.5/weather?q=London&appid=" + apiKey;

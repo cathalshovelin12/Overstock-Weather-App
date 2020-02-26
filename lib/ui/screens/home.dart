@@ -35,7 +35,6 @@ class HomeScreenState extends State<HomeScreen> {
               },
             ),
             onRefresh: () async {
-              print("REFRESH CALLED");
               setState(() {
                 getData = getLocationData();
               });
