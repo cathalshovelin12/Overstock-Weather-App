@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:weather_app/model/locationData.dart';
 import 'package:weather_app/ui/widgets/current_location_info.dart';
@@ -13,30 +12,38 @@ class HomeScreenState extends State<HomeScreen> {
   Future getData = getLocationData();
   FutureBuilder _populateCards() {
     return FutureBuilder(
-        builder: (context, snap) {
-          if (snap.connectionState == ConnectionState.none &&
-              snap.data == null) {
-            return Container();
-          }
-          return ListView.builder(
-            itemCount: snap.data.length,
-            itemBuilder: (BuildContext context, int index) {
-              LocationData locationData = snap.data[index];
-              return CurrentLocationInfo(
-                location: locationData?.location,
-                temperature: locationData?.temperature,
-                isCelcius: locationData?.isCelcius,
-                weatherIcon: locationData?.weatherIcon,
-                timestamp: locationData?.timestamp,
-                weatherType: locationData?.weatherType,
-                windSpeed: locationData?.windSpeed,
-                windDirection: locationData?.windDirection,
-              );
-            },
-          );
-        },
-        future: getData,
-        initialData: getInitialLocationData(),);
+      builder: (context, snap) {
+        if (snap.connectionState == ConnectionState.none && snap.data == null) {
+          return Container();
+        }
+
+        return RefreshIndicator(
+            child: ListView.builder(
+              itemCount: snap.data.length,
+              itemBuilder: (BuildContext context, int index) {
+                LocationData locationData = snap.data[index];
+                return CurrentLocationInfo(
+                  location: locationData?.location,
+                  temperature: locationData?.temperature,
+                  isCelcius: locationData?.isCelcius,
+                  weatherIcon: locationData?.weatherIcon,
+                  timestamp: locationData?.timestamp,
+                  weatherType: locationData?.weatherType,
+                  windSpeed: locationData?.windSpeed,
+                  windDirection: locationData?.windDirection,
+                );
+              },
+            ),
+            onRefresh: () async {
+              print("REFRESH CALLED");
+              setState(() {
+                getData = getLocationData();
+              });
+            });
+      },
+      future: getData,
+      initialData: getInitialLocationData(),
+    );
   }
 
   @override
