@@ -4,7 +4,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -15,9 +15,18 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  http: ^0.12.0+4
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - lib/assets/sun.png
+    - lib/assets/rain.png
+    - lib/assets/cloud.png
+    - lib/assets/thunder_lightning.png
+    - lib/assets/sun_cloud.png
+    - lib/assets/moon.png
 
   fonts:
     - family: Roboto-Regular
